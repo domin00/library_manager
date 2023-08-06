@@ -13,7 +13,8 @@ def main():
         print("2. Check out a book")
         print("3. Return a book")
         print("4. List all books")
-        print("5. Quit")
+        print("5. Import new books")
+        print("q. Quit")
 
         choice = input("Enter your choice: ")
 
@@ -26,6 +27,9 @@ def main():
         elif choice == "4":
             library_manager.list_all_books()
         elif choice == "5":
+            csv_path = input("CSV Path to Books: ")
+            library_manager.import_batch_of_books(csv_path)
+        elif choice == "q":
             sys.exit()
         else:
             print("Invalid choice.")
